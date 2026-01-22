@@ -307,7 +307,7 @@ ${formData.message ? `Message : ${formData.message}` : ''}
         </div>
 
         {/* Form */}
-        <div className="bg-white rounded-2xl p-6 md:p-8 shadow-xl">
+        <div className="bg-white rounded-2xl p-4 md:p-6 lg:p-8 shadow-xl">
           
           {/* Étape 1: Type de projet */}
           {step === 1 && (
@@ -325,7 +325,7 @@ ${formData.message ? `Message : ${formData.message}` : ''}
                       key={opt.value}
                       type="button"
                       onClick={() => updateField('transactionType', opt.value)}
-                      className={`p-4 rounded-xl border-2 font-semibold transition-all ${
+                      className={`p-3 md:p-4 rounded-xl border-2 font-semibold transition-all ${
                         formData.transactionType === opt.value
                           ? 'border-emerald-600 bg-emerald-50 text-emerald-700'
                           : 'border-gray-200 hover:border-emerald-300'
@@ -371,7 +371,8 @@ ${formData.message ? `Message : ${formData.message}` : ''}
               
               <div className="mb-6">
                 <label className="block font-semibold mb-3">Type de bien *</label>
-                <div className="grid grid-cols-3 gap-4">
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+
                   {[
                     { value: "maison", label: "Maison", icon: Home },
                     { value: "appartement", label: "Appartement", icon: Building },
@@ -383,13 +384,13 @@ ${formData.message ? `Message : ${formData.message}` : ''}
                         key={opt.value}
                         type="button"
                         onClick={() => updateField('propertyType', opt.value)}
-                        className={`p-4 rounded-xl border-2 transition-all ${
+                        className={`p-3 md:p-4 rounded-xl border-2 transition-all ${
                           formData.propertyType === opt.value
                             ? 'border-emerald-600 bg-emerald-50'
                             : 'border-gray-200 hover:border-emerald-300'
                         }`}
                       >
-                        <Icon className={`h-8 w-8 mx-auto mb-2 ${formData.propertyType === opt.value ? 'text-emerald-600' : 'text-gray-400'}`} />
+                        <Icon className={`h-6 w-6 md:h-8 md:w-8 mx-auto mb-2 ${formData.propertyType === opt.value ? 'text-emerald-600' : 'text-gray-400'}`} />
                         <div className="font-semibold text-sm">{opt.label}</div>
                       </button>
                     );
@@ -397,7 +398,7 @@ ${formData.message ? `Message : ${formData.message}` : ''}
                 </div>
               </div>
 
-              <div className="grid md:grid-cols-2 gap-4">
+              <div className="grid md:grid-cols-2 gap-3 md:gap-4">
                 <div>
                   <label className="block font-semibold mb-2">Surface (m²) *</label>
                   <input
