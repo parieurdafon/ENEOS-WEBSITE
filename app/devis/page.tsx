@@ -82,10 +82,10 @@ const DIAGNOSTICS_CONFIG = {
     category: "securite"
   },
   termites: { 
-    label: "Termites", 
+    label: "État relatif à la présence de termites", 
     basePrice: 80, 
     icon: "🐜", 
-    desc: "État Parasitaire",
+    desc: "Diagnostic Termites",
     category: "parasites"
   },
   erp: { 
@@ -234,10 +234,10 @@ const calculatePrice = (diagnosticId: string, formData: any, nbDiags: number) =>
 
   // Remise selon nombre de diagnostics (pack)
   let discount = 0;
-  if (nbDiags >= 5) discount = 0.15; // -15%
-  else if (nbDiags === 4) discount = 0.10; // -10%
-  else if (nbDiags === 3) discount = 0.05; // -5%
-  else if (nbDiags === 2) discount = 0.02; // -2%
+  if (nbDiags >= 6) discount = 0.30; // -30%
+  else if (nbDiags === 5) discount = 0.25; // -25%
+  else if (nbDiags === 4) discount = 0.20; // -20%
+  // 3 diags ou moins : pas de réduction
 
   price = price * (1 - discount);
 
@@ -922,7 +922,7 @@ ${formData.message ? `Message : ${formData.message}` : ''}
                               </p>
                             </div>
                           </div>
-                          <span className="font-bold text-red-600 ml-4">{price}€</span>
+                          <span className="font-bold text-red-600 ml-4">{price}€ TTC</span>
                         </div>
                       );
                     })}
@@ -964,7 +964,7 @@ ${formData.message ? `Message : ${formData.message}` : ''}
                               <p className="text-sm text-gray-600">{diag.desc}</p>
                             </div>
                           </div>
-                          <span className="font-bold text-orange-600 ml-4">{price}€</span>
+                          <span className="font-bold text-orange-600 ml-4">{price}€ TTC</span>
                         </label>
                       );
                     })}
@@ -1005,7 +1005,7 @@ ${formData.message ? `Message : ${formData.message}` : ''}
                               <p className="text-sm text-gray-500">{diag.desc}</p>
                             </div>
                           </div>
-                          <span className="font-bold text-emerald-600 ml-4">{price}€</span>
+                          <span className="font-bold text-emerald-600 ml-4">{price}€ TTC</span>
                         </label>
                       );
                     })}
@@ -1018,13 +1018,12 @@ ${formData.message ? `Message : ${formData.message}` : ''}
                     <span className="font-semibold">Total estimé ({formData.selectedDiagnostics.length} diagnostic{formData.selectedDiagnostics.length > 1 ? 's' : ''})</span>
                     <span className="text-2xl font-bold text-emerald-600">{calculateTotal()}€</span>
                   </div>
-                  {formData.selectedDiagnostics.length >= 2 && (
+                  {formData.selectedDiagnostics.length >= 4 && (
                     <p className="text-sm text-emerald-700">
                       ✓ Remise pack incluse ({
-                        formData.selectedDiagnostics.length >= 5 ? '15%' :
-                        formData.selectedDiagnostics.length === 4 ? '10%' :
-                        formData.selectedDiagnostics.length === 3 ? '5%' :
-                        '2%'
+                        formData.selectedDiagnostics.length >= 6 ? '30%' :
+                        formData.selectedDiagnostics.length === 5 ? '25%' :
+                        '20%'
                       })
                     </p>
                   )}
@@ -1298,10 +1297,10 @@ ${formData.message ? `Message : ${formData.message}` : ''}
                     {formData.selectedDiagnostics.length >= 2 && (
                       <p className="text-xs text-emerald-700">
                         Remise pack de {
-                          formData.selectedDiagnostics.length >= 5 ? '15%' :
-                          formData.selectedDiagnostics.length === 4 ? '10%' :
-                          formData.selectedDiagnostics.length === 3 ? '5%' :
-                          '2%'
+                          formData.selectedDiagnostics.length >= 6 ? '30%' :
+                          formData.selectedDiagnostics.length === 5 ? '25%' :
+                          formData.selectedDiagnostics.length === 4 ? '20%' :
+                          '0%'
                         } appliquée
                       </p>
                     )}

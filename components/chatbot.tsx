@@ -1,7 +1,6 @@
 "use client"
 
 import React from "react"
-
 import { useState, useRef, useEffect } from "react"
 import { MessageCircle, X, Send, Bot, User } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -27,23 +26,25 @@ const quickReplies = [
   "Demander un devis",
   "Infos sur le DPE",
   "Zones d'intervention",
+  "Audit énergétique",
   "Prendre rendez-vous",
 ]
 
 const botResponses: Record<string, string> = {
   devis: "Pour obtenir un devis gratuit et personnalisé, vous pouvez utiliser notre formulaire de devis en ligne disponible 24h/24. Il vous suffit de cliquer sur 'Devis en ligne' dans le menu ou de me dire quel type de diagnostic vous souhaitez.",
   dpe: "Le DPE (Diagnostic de Performance Énergétique) évalue la consommation énergétique d'un bien et son impact sur les émissions de gaz à effet de serre. Il est obligatoire pour toute vente ou location. Sa validité est de 10 ans. Souhaitez-vous un devis pour un DPE ?",
-  zone: "ENEOS HABITAT intervient dans toute la Gironde (33), notamment à Cadaujac, Bordeaux, et leurs environs. Nous nous déplaçons rapidement pour réaliser vos diagnostics. Où se situe votre bien ?",
+  zone: "ENEOS HABITAT intervient dans toute la Gironde (33) en moins de 48h et en région Nouvelle-Aquitaine (16, 17, 24, 47, 40) en moins de 72h. Nous nous déplaçons rapidement pour réaliser vos diagnostics. Où se situe votre bien ?",
   rendez: "Pour prendre rendez-vous, vous pouvez nous appeler au +33 6 61 07 08 91 ou nous envoyer un email à Contact@eneoshabitat.fr. Nous sommes disponibles du lundi au samedi de 9h à 19h.",
-  prix: "Nos tarifs sont compétitifs et adaptés à chaque situation. Le prix dépend du type de bien, de sa superficie et des diagnostics nécessaires. Demandez un devis gratuit pour connaître le tarif exact.",
+  prix: "Nos tarifs sont compétitifs et adaptés à chaque situation. Le prix dépend du type de bien, de sa superficie et des diagnostics nécessaires. Demandez un devis gratuit pour connaître le tarif exact. Profitez de nos remises sur les packs : -20% à partir de 4 diagnostics, -25% pour 5 diagnostics, -30% pour 6 diagnostics ou plus !",
   amiante: "Le diagnostic amiante est obligatoire pour les biens construits avant le 1er juillet 1997. Il recherche la présence d'amiante dans les matériaux de construction. Souhaitez-vous plus d'informations ?",
   plomb: "Le diagnostic plomb (CREP) est obligatoire pour les logements construits avant 1949. Il détecte la présence de plomb dans les peintures. Valable 1 an pour la vente si positif, illimité si négatif.",
   electricite: "Le diagnostic électricité est obligatoire pour les installations de plus de 15 ans lors d'une vente ou location. Il vérifie la conformité et la sécurité de l'installation électrique.",
   gaz: "Le diagnostic gaz concerne les installations de plus de 15 ans. Il vérifie la sécurité de l'installation et est valable 3 ans pour la vente, 6 ans pour la location.",
-  termites: "Le diagnostic termites est obligatoire dans les zones à risque définies par arrêté préfectoral. Il est valable 6 mois. La Gironde est concernée par ce risque.",
+  termites: "L'état relatif à la présence de termites est obligatoire dans les zones à risque définies par arrêté préfectoral. Il est valable 6 mois. La Gironde est concernée par ce risque.",
   erp: "L'ERP (État des Risques et Pollutions) informe sur les risques naturels, miniers, technologiques et de pollution auxquels est exposé le bien. Obligatoire pour toute transaction.",
   carrez: "La loi Carrez concerne les biens en copropriété. Elle mesure la surface privative du lot. Ce diagnostic est valable sans limite de temps sauf si des travaux modifient la surface.",
   boutin: "La surface habitable (loi Boutin) est obligatoire pour toute location. Elle mesure la surface de plancher après déduction des surfaces occupées par les murs, cloisons, etc.",
+  audit: "L'audit énergétique est une étude approfondie de votre bien immobilier pour identifier les travaux de rénovation énergétique les plus pertinents. Plus complet que le DPE, il propose un plan d'actions chiffré pour améliorer votre performance énergétique. Obligatoire depuis 2023 pour la vente de maisons classées F ou G. Souhaitez-vous plus d'informations ?",
   default: "Je comprends votre demande. Pour une réponse plus précise, n'hésitez pas à nous contacter directement au +33 6 61 07 08 91 ou par email à Contact@eneoshabitat.fr. Puis-je vous aider autrement ?",
 }
 
@@ -56,7 +57,10 @@ function getBotResponse(message: string): string {
   if (lowerMessage.includes("dpe") || lowerMessage.includes("énergétique") || lowerMessage.includes("performance")) {
     return botResponses.dpe
   }
-  if (lowerMessage.includes("zone") || lowerMessage.includes("intervention") || lowerMessage.includes("secteur") || lowerMessage.includes("où")) {
+  if (lowerMessage.includes("audit")) {
+    return botResponses.audit
+  }
+  if (lowerMessage.includes("zone") || lowerMessage.includes("intervention") || lowerMessage.includes("secteur") || lowerMessage.includes("où") || lowerMessage.includes("déplace")) {
     return botResponses.zone
   }
   if (lowerMessage.includes("rendez") || lowerMessage.includes("rdv") || lowerMessage.includes("appel") || lowerMessage.includes("contact")) {

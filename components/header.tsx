@@ -16,6 +16,7 @@ import {
 const services = [
   { name: "DPE - Diagnostic Performance Énergétique", href: "/services/dpe" },
   { name: "Amiante", href: "/services/amiante" },
+  { name: "Audit Énergétique", href: "/services/audit-energetique" }, // ← AJOUTER CETTE LIGNE
   { name: "Plomb", href: "/services/plomb" },
   { name: "Électricité", href: "/services/electricite" },
   { name: "Gaz", href: "/services/gaz" },
