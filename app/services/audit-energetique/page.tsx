@@ -34,7 +34,7 @@ export default function AuditEnergetiquePage() {
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10" asChild>
+              <Button size="lg"  className="bg-white text-emerald-900 hover:bg-emerald-50" asChild>
                 <a href="tel:+33661070891">
                   <Phone className="mr-2 h-5 w-5" />
                   Appeler maintenant
@@ -505,10 +505,10 @@ export default function AuditEnergetiquePage() {
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10" asChild>
+              <Button size="lg"  className="bg-white text-emerald-900 hover:bg-emerald-50" asChild>
                 <a href="tel:+33661070891">
                   <Phone className="mr-2 h-5 w-5" />
-                  06 61 07 08 91
+                  Appeler maintenant
                 </a>
               </Button>
             </div>
