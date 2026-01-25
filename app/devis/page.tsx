@@ -143,10 +143,15 @@ const calculateMandatoryDiagnostics = (formData: any) => {
   mandatory.push('erp');
   explanations.erp = "Obligatoire pour toute transaction immobilière";
 
-  // RÈGLE 2: DPE - TOUJOURS OBLIGATOIRE (si bâtiment chauffé)
+  // RÈGLE 2: DPE - OBLIGATOIRE sauf maison < 50m²
   if (formData.chauffage && formData.chauffage !== 'aucun') {
-    mandatory.push('dpe');
-    explanations.dpe = "Obligatoire pour tout bien chauffé";
+    const surface = parseInt(formData.surface || '0');
+    const isMaisonMoinsDe50 = formData.propertyType === 'maison' && surface < 50;
+    
+    if (!isMaisonMoinsDe50) {
+      mandatory.push('dpe');
+      explanations.dpe = "Obligatoire pour toute vente et location";
+    }
   }
 
   // RÈGLE 3: PLOMB (CREP) - Si construction avant 1949
@@ -155,10 +160,14 @@ const calculateMandatoryDiagnostics = (formData: any) => {
     explanations.plomb = "Obligatoire : construction avant 1949";
   }
 
-  // RÈGLE 4: AMIANTE - Si construction avant 01/07/1997
+  // RÈGLE 4: AMIANTE - UNIQUEMENT pour VENTE avant 01/07/1997
   if (formData.constructionDate === 'avant1949' || formData.constructionDate === '1949-1997') {
-    mandatory.push('amiante');
-    explanations.amiante = "Obligatoire : construction avant juillet 1997";
+    if (formData.transactionType === 'vente') {
+      mandatory.push('amiante');
+      explanations.amiante = "Obligatoire : vente avec construction avant juillet 1997";
+    } else if (formData.transactionType === 'location') {
+      recommended.push('amiante');
+    }
   }
 
   // RÈGLE 5: ÉLECTRICITÉ - Si installation + de 15 ans
@@ -177,12 +186,12 @@ const calculateMandatoryDiagnostics = (formData: any) => {
     recommended.push('gaz');
   }
 
-  // RÈGLE 7: TERMITES - Si zone à risque (département)
-  if (formData.postalCode && formData.postalCode.length >= 2) {
+  // RÈGLE 7: TERMITES - UNIQUEMENT pour VENTE en zone à risque
+  if (formData.postalCode && formData.postalCode.length >= 2 && formData.transactionType === 'vente') {
     const dept = formData.postalCode.substring(0, 2);
     if (ZONES_TERMITES.includes(dept)) {
       mandatory.push('termites');
-      explanations.termites = `Obligatoire : zone à risque termites (${dept})`;
+      explanations.termites = `Obligatoire : vente en zone à risque termites (${dept})`;
     }
   }
 
