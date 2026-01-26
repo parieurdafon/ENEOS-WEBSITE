@@ -39,7 +39,7 @@ export function AboutSection() {
           <div className="relative">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
               <Image
-                src="/images/about.jpg"
+                src="/images/about.jpeg"
                 alt="Expert ENEOS HABITAT"
                 width={600}
                 height={500}

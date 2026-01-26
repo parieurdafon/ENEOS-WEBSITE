@@ -52,7 +52,7 @@ export default function AProposPage() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="relative">
               <Image
-                src="/images/team.jpg"
+                src="/images/team.jpeg"
                 alt="Équipe ENEOS HABITAT"
                 width={600}
                 height={500}
@@ -60,8 +60,8 @@ export default function AProposPage() {
               />
               <div className="absolute -bottom-8 -right-8 bg-[#2d8a5e] text-white p-6 rounded-2xl shadow-xl">
                 <div className="text-center">
-                  <span className="block text-3xl font-bold">2023</span>
-                  <span className="text-sm text-white/80">Date de création</span>
+                  <span className="block text-3xl font-bold">Certifications LCP</span>
+                  
                 </div>
               </div>
             </div>
@@ -71,14 +71,17 @@ export default function AProposPage() {
                 Notre <span className="text-[#2d8a5e]">histoire</span>
               </h2>
               <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-                <strong className="text-foreground">ENEOS HABITAT</strong> est né de la volonté de proposer des services de diagnostic immobilier de qualité, alliant expertise technique et accompagnement personnalisé.
-              </p>
-              <p className="text-muted-foreground leading-relaxed mb-6">
-                Fondée en 2023 et basée à Cadaujac, notre entreprise est une <strong className="text-foreground">SAS à mission</strong>, témoignant de notre engagement envers un habitat plus durable et responsable. Nous intervenons dans toute la Gironde pour accompagner propriétaires, vendeurs et bailleurs dans leurs projets immobiliers.
-              </p>
-              <p className="text-muted-foreground leading-relaxed mb-8">
-                Notre équipe de diagnostiqueurs certifiés met son expertise à votre service pour vous fournir des rapports fiables, conformes et livrés dans les meilleurs délais.
-              </p>
+                    <strong className="text-foreground">ENEOS HABITAT</strong> est né de la volonté de proposer des services de diagnostic immobilier de qualité, alliant expertise technique et accompagnement personnalisé.
+                  </p>
+
+                  <p className="text-muted-foreground leading-relaxed mb-6">
+                    Fondée par <strong className="text-foreground">Guillaume A</strong>, ingénieur thermicien de formation, ENEOS HABITAT témoigne de son engagement en faveur d’un habitat plus durable et responsable. Basée à <strong className="text-foreground">Bordeaux</strong>, notre entreprise intervient dans toute la région pour accompagner propriétaires, vendeurs et bailleurs dans leurs projets immobiliers.
+                  </p>
+
+                  <p className="text-muted-foreground leading-relaxed mb-8">
+                    Notre équipe de diagnostiqueurs certifiés met son expertise à votre service afin de vous fournir des rapports fiables, conformes à la réglementation en vigueur et livrés dans les meilleurs délais.
+                  </p>
+
 
               <div className="grid sm:grid-cols-2 gap-4">
                 {[

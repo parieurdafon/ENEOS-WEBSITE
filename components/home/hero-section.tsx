@@ -8,7 +8,7 @@ import { ChevronLeft, ChevronRight, Home, Key, Building } from "lucide-react"
 
 const slides = [
   {
-    image: "/images/hero-1.jpg",
+    image: "/images/hero-1.jpeg",
     title: "Tous vos diagnostics immobiliers",
     subtitle: "en région bordelaise",
     description: "ENEOS HABITAT réalise tous vos diagnostics obligatoires avec expertise et professionnalisme",

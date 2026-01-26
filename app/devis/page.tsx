@@ -90,7 +90,8 @@ const DIAGNOSTICS_CONFIG = {
   },
   erp: { 
     label: "ERP", 
-    basePrice: 30, 
+    basePrice: 0, // Offert
+    originalPrice: 30, // Prix barré
     icon: "🌍", 
     desc: "État des Risques et Pollutions",
     category: "risques"
@@ -243,13 +244,38 @@ const calculatePrice = (diagnosticId: string, formData: any, nbDiags: number) =>
 
   // Remise selon nombre de diagnostics (pack)
   let discount = 0;
-  if (nbDiags >= 6) discount = 0.30; // -30%
-  else if (nbDiags === 5) discount = 0.25; // -25%
-  else if (nbDiags === 4) discount = 0.20; // -20%
-  // 3 diags ou moins : pas de réduction
+  if (nbDiags >= 6) discount = 0.40; // -40%
+  else if (nbDiags === 5) discount = 0.35; // -35%
+  else if (nbDiags === 4) discount = 0.30; // -30%
+  else if (nbDiags === 3) discount = 0.25; // -25%
+  // 2 diags ou moins : pas de réduction
 
   price = price * (1 - discount);
 
+  return Math.round(price);
+};
+
+// Fonction pour calculer le prix ORIGINAL (sans remise pack)
+const calculateOriginalPrice = (diagnosticId: string, formData: any) => {
+  const config = DIAGNOSTICS_CONFIG[diagnosticId as keyof typeof DIAGNOSTICS_CONFIG];
+  if (!config) return 0;
+
+  let price = config.basePrice;
+
+  // Coefficient selon type de bien
+  if (formData.propertyType === 'maison') {
+    price *= 1.10;
+  }
+
+  // Coefficient selon surface
+  const surface = parseInt(formData.surface || '0');
+  if (surface > 200) {
+    price *= 1.20;
+  } else if (surface > 100) {
+    price *= 1.10;
+  }
+
+  // PAS de remise pack ici
   return Math.round(price);
 };
 
@@ -906,6 +932,10 @@ ${formData.message ? `Message : ${formData.message}` : ''}
                     {diagnosticsInfo.mandatory.map(id => {
                       const diag = DIAGNOSTICS_CONFIG[id as keyof typeof DIAGNOSTICS_CONFIG];
                       const price = calculatePrice(id, formData, formData.selectedDiagnostics.length);
+                      const originalPrice = calculateOriginalPrice(id, formData);
+                      const hasDiscount = originalPrice > price;
+                      const isERP = id === 'erp';
+                      
                       return (
                         <div
                           key={id}
@@ -931,7 +961,26 @@ ${formData.message ? `Message : ${formData.message}` : ''}
                               </p>
                             </div>
                           </div>
-                          <span className="font-bold text-red-600 ml-4">{price}€ TTC</span>
+                          <div className="ml-4 text-right">
+                            {isERP ? (
+                              // ERP Offert
+                              <>
+                                <div className="text-sm text-gray-400 line-through">30€</div>
+                                <div className="font-bold text-emerald-600 text-lg">
+                                  <span className="bg-emerald-100 px-2 py-1 rounded">0€ OFFERT</span>
+                                </div>
+                              </>
+                            ) : hasDiscount ? (
+                              // Prix avec réduction
+                              <>
+                                <div className="text-sm text-red-400 line-through">{originalPrice}€</div>
+                                <div className="font-bold text-red-600">{price}€ TTC</div>
+                              </>
+                            ) : (
+                              // Prix normal
+                              <div className="font-bold text-red-600">{price}€ TTC</div>
+                            )}
+                          </div>
                         </div>
                       );
                     })}
@@ -947,7 +996,10 @@ ${formData.message ? `Message : ${formData.message}` : ''}
                     {diagnosticsInfo.recommended.map(id => {
                       const diag = DIAGNOSTICS_CONFIG[id as keyof typeof DIAGNOSTICS_CONFIG];
                       const price = calculatePrice(id, formData, formData.selectedDiagnostics.length);
+                      const originalPrice = calculateOriginalPrice(id, formData);
+                      const hasDiscount = originalPrice > price;
                       const isSelected = formData.selectedDiagnostics.includes(id);
+                      
                       return (
                         <label
                           key={id}
@@ -973,7 +1025,16 @@ ${formData.message ? `Message : ${formData.message}` : ''}
                               <p className="text-sm text-gray-600">{diag.desc}</p>
                             </div>
                           </div>
-                          <span className="font-bold text-orange-600 ml-4">{price}€ TTC</span>
+                          <div className="ml-4 text-right">
+                            {hasDiscount ? (
+                              <>
+                                <div className="text-sm text-orange-400 line-through">{originalPrice}€</div>
+                                <div className="font-bold text-orange-600">{price}€ TTC</div>
+                              </>
+                            ) : (
+                              <div className="font-bold text-orange-600">{price}€ TTC</div>
+                            )}
+                          </div>
                         </label>
                       );
                     })}
@@ -989,7 +1050,10 @@ ${formData.message ? `Message : ${formData.message}` : ''}
                     .filter(([id]) => !diagnosticsInfo.mandatory.includes(id) && !diagnosticsInfo.recommended.includes(id))
                     .map(([id, diag]) => {
                       const price = calculatePrice(id, formData, formData.selectedDiagnostics.length);
+                      const originalPrice = calculateOriginalPrice(id, formData);
+                      const hasDiscount = originalPrice > price;
                       const isSelected = formData.selectedDiagnostics.includes(id);
+                      
                       return (
                         <label
                           key={id}
@@ -1014,7 +1078,16 @@ ${formData.message ? `Message : ${formData.message}` : ''}
                               <p className="text-sm text-gray-500">{diag.desc}</p>
                             </div>
                           </div>
-                          <span className="font-bold text-emerald-600 ml-4">{price}€ TTC</span>
+                          <div className="ml-4 text-right">
+                            {hasDiscount ? (
+                              <>
+                                <div className="text-sm text-gray-400 line-through">{originalPrice}€</div>
+                                <div className="font-bold text-emerald-600">{price}€ TTC</div>
+                              </>
+                            ) : (
+                              <div className="font-bold text-emerald-600">{price}€ TTC</div>
+                            )}
+                          </div>
                         </label>
                       );
                     })}
@@ -1027,12 +1100,13 @@ ${formData.message ? `Message : ${formData.message}` : ''}
                     <span className="font-semibold">Total estimé ({formData.selectedDiagnostics.length} diagnostic{formData.selectedDiagnostics.length > 1 ? 's' : ''})</span>
                     <span className="text-2xl font-bold text-emerald-600">{calculateTotal()}€</span>
                   </div>
-                  {formData.selectedDiagnostics.length >= 4 && (
+                  {formData.selectedDiagnostics.length >= 3 && (
                     <p className="text-sm text-emerald-700">
                       ✓ Remise pack incluse ({
-                        formData.selectedDiagnostics.length >= 6 ? '30%' :
-                        formData.selectedDiagnostics.length === 5 ? '25%' :
-                        '20%'
+                        formData.selectedDiagnostics.length >= 6 ? '40%' :
+                        formData.selectedDiagnostics.length === 5 ? '35%' :
+                        formData.selectedDiagnostics.length === 4 ? '30%' :
+                        '25%'
                       })
                     </p>
                   )}
@@ -1303,13 +1377,13 @@ ${formData.message ? `Message : ${formData.message}` : ''}
                       <span className="font-bold">TOTAL TTC</span>
                       <span className="text-2xl font-bold text-emerald-600">{calculateTotal()}€</span>
                     </div>
-                    {formData.selectedDiagnostics.length >= 2 && (
+                    {formData.selectedDiagnostics.length >= 3 && (
                       <p className="text-xs text-emerald-700">
                         Remise pack de {
-                          formData.selectedDiagnostics.length >= 6 ? '30%' :
-                          formData.selectedDiagnostics.length === 5 ? '25%' :
-                          formData.selectedDiagnostics.length === 4 ? '20%' :
-                          '0%'
+                          formData.selectedDiagnostics.length >= 6 ? '40%' :
+                          formData.selectedDiagnostics.length === 5 ? '35%' :
+                          formData.selectedDiagnostics.length === 4 ? '30%' :
+                          '25%'
                         } appliquée
                       </p>
                     )}
