@@ -46,12 +46,18 @@ export function AboutSection() {
                 className="w-full h-[400px] lg:h-[500px] object-cover"
               />
               {/* Experience Badge */}
-              <div className="absolute -bottom-6 -right-6 bg-[#2d8a5e] text-white p-6 rounded-2xl shadow-xl">
+              {/* Experience Badge CENTRÉ */}
+{/* Experience Badge - Bas centré avec bordure réduite */}
+              <div className="absolute bottom-2 left-1/2 -translate-x-1/2 bg-[#2d8a5e] text-white px-6 py-4 rounded-xl shadow-lg">
                 <div className="text-center">
-                  <span className="block text-4xl font-bold">+10</span>
-                  <span className="text-sm text-white/80">{"ans d'expérience"}</span>
+                  <span className="block text-3xl font-bold">+10</span>
+                  <span className="text-xs text-white/90">
+                    ans d&apos;expérience
+                  </span>
                 </div>
               </div>
+
+
             </div>
             
             {/* Decorative elements */}
