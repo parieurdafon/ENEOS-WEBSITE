@@ -134,12 +134,7 @@ export function Header() {
               >
                 Contact
               </Link>
-              <Link
-                href="/services/audit-energetique"
-                className="text-foreground hover:text-primary font-medium transition-colors"
-              >
-                Audit Énergétique
-              </Link>
+              
             </nav>
 
             {/* CTA Buttons */}
@@ -231,13 +226,7 @@ export function Header() {
                 >
                   Contact
                 </Link>
-                 <Link
-                  href="/services/audit-energetique"
-                  className="py-2 text-foreground hover:text-primary font-medium"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Audit Énergétique
-                </Link>
+                
 
                 <div className="flex flex-col gap-3 pt-4 border-t">
                   <Button asChild className="w-full bg-[#1a5f3c] hover:bg-[#154d31] text-white">
