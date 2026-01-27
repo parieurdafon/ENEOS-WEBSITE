@@ -46,10 +46,10 @@ export function AboutSection() {
                 className="w-full h-[400px] lg:h-[500px] object-cover"
               />
               {/* Experience Badge */}
-              <div className="absolute -bottom-6 -right-6 bg-[#2d8a5e] text-white p-6 rounded-2xl shadow-xl">
+              <div className="absolute -bottom-6 -right-6 bg-[#2d8a5e] text-white p-8 rounded-2xl shadow-xl flex items-center justify-center min-w-[180px]">
                 <div className="text-center">
-                  <span className="block text-4xl font-bold ">+10</span>
-                  <span className="text-sm text-white/80">{"ans d'expérience"}</span>
+                  <div className="text-4xl font-bold mb-1">+10</div>
+                  <div className="text-sm text-white/90 whitespace-nowrap">ans d'expérience</div>
                 </div>
               </div>
             </div>
@@ -68,7 +68,7 @@ export function AboutSection() {
               Bienvenue chez <span className="text-[#2d8a5e]">ENEOS HABITAT</span>
             </h2>
             
-            <p className="text-muted-foreground text-lg leading-relaxed mb-6">
+            <p className="text-muted-foreground leading-relaxed mb-6">
               <strong className="text-foreground">ENEOS HABITAT</strong> est votre partenaire de confiance pour réaliser des 
               <strong className="text-foreground"> diagnostics immobiliers</strong> en Gironde. Notre cabinet est situé à Cadaujac, 
               proche de Bordeaux, mais nous intervenons dans toute la région.

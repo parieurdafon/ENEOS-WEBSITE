@@ -70,17 +70,17 @@ export default function AProposPage() {
               <h2 className="text-3xl lg:text-4xl font-bold mb-6">
                 Notre <span className="text-[#2d8a5e]">histoire</span>
               </h2>
-              <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-                    <strong className="text-foreground">ENEOS HABITAT</strong> est né de la volonté de proposer des services de diagnostic immobilier de qualité, alliant expertise technique et accompagnement personnalisé.
-                  </p>
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                <strong className="text-foreground">ENEOS HABITAT</strong> est né de la volonté de proposer des services de diagnostic immobilier de qualité, alliant expertise technique et accompagnement personnalisé.
+              </p>
 
-                  <p className="text-muted-foreground leading-relaxed mb-6">
-                    Fondée par <strong className="text-foreground">Guillaume A</strong>, ingénieur thermicien de formation, ENEOS HABITAT témoigne de son engagement en faveur d’un habitat plus durable et responsable. Basée à <strong className="text-foreground">Bordeaux</strong>, notre entreprise intervient dans toute la région pour accompagner propriétaires, vendeurs et bailleurs dans leurs projets immobiliers.
-                  </p>
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                Fondée par <strong className="text-foreground">Guillaume A</strong>, ingénieur thermicien de formation, ENEOS HABITAT témoigne de son engagement en faveur d'un habitat plus durable et responsable. Basée à <strong className="text-foreground">Bordeaux</strong>, notre entreprise intervient dans toute la région pour accompagner propriétaires, vendeurs et bailleurs dans leurs projets immobiliers.
+              </p>
 
-                  <p className="text-muted-foreground leading-relaxed mb-8">
-                    Notre équipe de diagnostiqueurs certifiés met son expertise à votre service afin de vous fournir des rapports fiables, conformes à la réglementation en vigueur et livrés dans les meilleurs délais.
-                  </p>
+              <p className="text-muted-foreground leading-relaxed mb-8">
+                Notre équipe de diagnostiqueurs certifiés met son expertise à votre service afin de vous fournir des rapports fiables, conformes à la réglementation en vigueur et livrés dans les meilleurs délais.
+              </p>
 
 
               <div className="grid sm:grid-cols-2 gap-4">
