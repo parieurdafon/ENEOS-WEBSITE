@@ -195,7 +195,7 @@ export default function AProposPage() {
                     <Mail className="h-5 w-5 text-[#2d8a5e]" />
                     <div>
                       <p className="font-medium">Email</p>
-                      <a href="mailto:Contact@eneoshabitat.fr" className="text-[#2d8a5e] hover:underline">Contact@eneoshabitat.fr</a>
+                      <a href="mailto:contact@eneoshabitat.fr" className="text-[#2d8a5e] hover:underline">contact@eneoshabitat.fr</a>
                     </div>
                   </div>
                 </div>

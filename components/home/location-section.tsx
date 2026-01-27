@@ -115,7 +115,7 @@ export function LocationSection() {
                 <Mail className="h-8 w-8 mb-4 opacity-80" />
                 <p className="text-white/70 text-sm mb-1">Email</p>
                 <a href="mailto:Contact@eneoshabitat.fr" className="text-lg font-bold hover:underline break-all">
-                  Contact@eneoshabitat.fr
+                  contact@eneoshabitat.fr
                 </a>
               </div>
             </div>

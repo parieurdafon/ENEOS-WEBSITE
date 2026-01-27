@@ -27,7 +27,7 @@ export default function MentionsLegalesPage() {
               <p><strong className="text-foreground">Numéro de TVA :</strong> FR 87 989825484</p>
               <p><strong className="text-foreground">Siège social :</strong> 3466 Avenue de Toulouse, 33140 Cadaujac</p>
               <p><strong className="text-foreground">Téléphone :</strong> +33 6 61 07 08 91</p>
-              <p><strong className="text-foreground">Email :</strong> Contact@eneoshabitat.fr</p>
+              <p><strong className="text-foreground">Email :</strong> contact@eneoshabitat.fr</p>
             </div>
           </section>
 

@@ -84,7 +84,7 @@ export function Footer() {
               <li>
                 <a href="mailto:Contact@eneoshabitat.fr" className="flex items-center gap-3 hover:text-white">
                   <Mail className="h-5 w-5 text-[#2d8a5e]" />
-                  Contact@eneoshabitat.fr
+                  contact@eneoshabitat.fr
                 </a>
               </li>
               <li className="flex gap-3">

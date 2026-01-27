@@ -172,7 +172,7 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-semibold mb-1">Email</h3>
                     <a href="mailto:Contact@eneoshabitat.fr" className="text-[#2d8a5e] hover:underline">
-                      Contact@eneoshabitat.fr
+                      contact@eneoshabitat.fr
                     </a>
                   </div>
                 </div>

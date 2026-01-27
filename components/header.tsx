@@ -50,7 +50,7 @@ export function Header() {
             </a>
             <a href="mailto:Contact@eneoshabitat.fr" className="flex items-center gap-2 hover:text-green-200 transition-colors">
               <Mail className="h-4 w-4" />
-              <span>Contact@eneoshabitat.fr</span>
+              <span>contact@eneoshabitat.fr</span>
             </a>
           </div>
           <div className="flex items-center gap-4">
