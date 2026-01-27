@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { CheckCircle2, Home, Building, Store, Phone, Mail, MapPin, ArrowRight, ArrowLeft, Sparkles, Clock, Shield, Calendar, User, FileText, AlertCircle, Check, Info } from 'lucide-react';
-
+import emailjs from '@emailjs/browser'; // ← AJOUTÉ
 // ============================================================================
 // CONFIGURATION
 // ============================================================================
@@ -11,7 +11,12 @@ const COMPANY = {
   phone: "06 61 07 08 91",
   email: "contact@eneoshabitat.fr"
 };
-
+// Configuration EmailJS (même que formulaire contact)
+const EMAILJS_CONFIG = {
+  serviceId: 'service_67ktt0t',
+  templateId: 'template_w0ii8pm', // À REMPLACER par ton Template ID
+  publicKey: 'nrVf3vJi4ywLNDpWF'
+};
 // ZONES TERMITES - Liste complète des départements
 const ZONES_TERMITES = [
   // Nouvelle-Aquitaine (tous)
@@ -286,6 +291,8 @@ const calculateOriginalPrice = (diagnosticId: string, formData: any) => {
 export default function DevisFormComplete() {
   const [step, setStep] = useState(1);
   const [submitted, setSubmitted] = useState(false);
+   const [isLoading, setIsLoading] = useState(false); // ← AJOUTÉ
+  const [error, setError] = useState(""); // ← AJOUTÉ
   const [formData, setFormData] = useState({
     // Étape 1
     transactionType: "",
@@ -334,6 +341,10 @@ export default function DevisFormComplete() {
     explanations: {} as Record<string, string>,
     recommended: [] as string[]
   });
+  // Initialiser EmailJS au chargement
+useEffect(() => {
+  emailjs.init(EMAILJS_CONFIG.publicKey);
+}, []);
 
   const updateField = (field: string, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }));
@@ -406,63 +417,105 @@ export default function DevisFormComplete() {
     formData.assainissement
   ]);
 
-  const handleSubmit = () => {
-    const diagnosticsList = formData.selectedDiagnostics.map(id => {
-      const d = DIAGNOSTICS_CONFIG[id as keyof typeof DIAGNOSTICS_CONFIG];
+  const handleSubmit = async () => {
+  setIsLoading(true);
+  setError("");
+
+  try {
+    // Construire la liste des diagnostics en HTML
+    const diagnosticsHTML = formData.selectedDiagnostics.map(id => {
+      const diag = DIAGNOSTICS_CONFIG[id as keyof typeof DIAGNOSTICS_CONFIG];
       const price = calculatePrice(id, formData, formData.selectedDiagnostics.length);
       const isMandatory = diagnosticsInfo.mandatory.includes(id);
-      return `- ${d?.label} (${price}€) ${isMandatory ? '✓ OBLIGATOIRE' : ''}`;
-    }).join('%0D%0A');
+      
+      return `
+        <li class="diagnostic-item${isMandatory ? ' mandatory' : ''}">
+          <div>
+            <span class="name">${diag.icon} ${diag.label}</span>
+            ${isMandatory ? '<span class="badge">OBLIGATOIRE</span>' : ''}
+          </div>
+          <span class="price">${price}€</span>
+        </li>
+      `;
+    }).join('');
 
-    const emailBody = `
-DEMANDE DE DEVIS - DIAGNOSTICS IMMOBILIERS
-═══════════════════════════════════════════
+    // Calculer la remise
+    const nbDiags = formData.selectedDiagnostics.length;
+    let discountText = '';
+    if (nbDiags >= 6) discountText = 'Remise pack -40% incluse';
+    else if (nbDiags === 5) discountText = 'Remise pack -35% incluse';
+    else if (nbDiags === 4) discountText = 'Remise pack -30% incluse';
+    else if (nbDiags === 3) discountText = 'Remise pack -25% incluse';
 
-📋 TYPE DE PROJET
-Transaction : ${formData.transactionType === 'vente' ? 'VENTE' : 'LOCATION'}
-Urgence : ${formData.urgence}
+    // Préparer les paramètres pour EmailJS
+    const templateParams = {
+      // Type de projet
+      transaction_type: formData.transactionType === 'vente' ? 'VENTE' : 'LOCATION',
+      urgence: formData.urgence,
+      if_urgence_urgent: formData.urgence === 'urgent',
+      
+      // Le bien
+      property_type: formData.propertyType,
+      surface: formData.surface,
+      pieces: formData.pieces || '',
+      construction_date: formData.constructionDate,
+      electricite: formData.electricite,
+      gaz: formData.gaz,
+      copropriete: formData.copropriete,
+      chauffage: formData.chauffage,
+      assainissement: formData.assainissement || '',
+      
+      // Adresse
+      address: formData.address,
+      complement: formData.complement || '',
+      postal_code: formData.postalCode,
+      city: formData.city,
+      
+      // Diagnostics
+      nb_diagnostics: formData.selectedDiagnostics.length,
+      diagnostics_html: diagnosticsHTML,
+      total: calculateTotal(),
+      discount_text: discountText,
+      
+      // Date
+      date_preference: new Date(formData.datePreference).toLocaleDateString('fr-FR'),
+      time_slot: formData.timeSlot || '',
+      
+      // Coordonnées
+      civility: formData.civility || '',
+      first_name: formData.firstName,
+      last_name: formData.lastName,
+      email: formData.email,
+      phone: formData.phone,
+      contact_preference: formData.contactPreference || '',
+      
+      // Infos complémentaires
+      has_additional_info: !!(formData.accesBien || formData.parking || formData.message),
+      acces_bien: formData.accesBien || '',
+      parking: formData.parking || '',
+      message: formData.message || ''
+    };
 
-🏠 LE BIEN
-Type : ${formData.propertyType}
-Surface : ${formData.surface} m²
-${formData.pieces ? `Pièces : ${formData.pieces}` : ''}
-Date de construction : ${formData.constructionDate}
-Installation électrique : ${formData.electricite}
-Installation GAZ : ${formData.gaz}
-Copropriété : ${formData.copropriete}
-Type de chauffage : ${formData.chauffage}
-${formData.assainissement ? `Assainissement : ${formData.assainissement}` : ''}
+    console.log('📧 Envoi du devis via EmailJS...', templateParams);
 
-📍 ADRESSE
-${formData.address}
-${formData.complement ? formData.complement + '%0D%0A' : ''}${formData.postalCode} ${formData.city}
+    // Envoi via EmailJS
+    const response = await emailjs.send(
+      EMAILJS_CONFIG.serviceId,
+      EMAILJS_CONFIG.templateId,
+      templateParams
+    );
 
-✅ DIAGNOSTICS SÉLECTIONNÉS (${formData.selectedDiagnostics.length})
-${diagnosticsList}
-
-💰 TOTAL ESTIMÉ : ${calculateTotal()}€ TTC
-(Remise pack incluse)
-
-📅 DATE SOUHAITÉE
-${formData.datePreference}
-${formData.timeSlot ? `Créneau : ${formData.timeSlot}` : ''}
-
-👤 VOS COORDONNÉES
-${formData.civility} ${formData.firstName} ${formData.lastName}
-📧 ${formData.email}
-📞 ${formData.phone}
-Préférence contact : ${formData.contactPreference || 'Non précisée'}
-
-ℹ️ INFORMATIONS COMPLÉMENTAIRES
-Accès au bien : ${formData.accesBien || 'Non précisé'}
-Parking : ${formData.parking || 'Non précisé'}
-${formData.message ? `Message : ${formData.message}` : ''}
-    `.trim();
-
-    window.location.href = `mailto:${COMPANY.email}?subject=Demande de devis - ${formData.transactionType} ${formData.propertyType}&body=${encodeURIComponent(emailBody)}`;
+    console.log('✅ Devis envoyé avec succès!', response);
+    setIsLoading(false);
     setSubmitted(true);
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+
+  } catch (err: any) {
+    console.error('❌ Erreur lors de l\'envoi:', err);
+    setError(`Erreur lors de l'envoi du devis. ${err?.text || 'Veuillez réessayer.'}`);
+    setIsLoading(false);
+  }
+};
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' });
@@ -1437,6 +1490,12 @@ ${formData.message ? `Message : ${formData.message}` : ''}
 
           {/* Navigation */}
           <div className="flex justify-between mt-8 pt-6 border-t">
+            {error && (
+                <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg text-red-800 text-sm">
+                  <strong>⚠️ Erreur :</strong><br />
+                  {error}
+                </div>
+              )}
             {step > 1 ? (
               <button
                 type="button"
@@ -1460,13 +1519,26 @@ ${formData.message ? `Message : ${formData.message}` : ''}
               </button>
             ) : (
               <button
-                type="button"
-                onClick={handleSubmit}
-                className="px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-xl font-bold text-lg hover:shadow-xl transition-all inline-flex items-center gap-2"
-              >
-                <Sparkles className="h-5 w-5" />
-                Envoyer ma demande
-              </button>
+  type="button"
+  onClick={handleSubmit}
+  disabled={isLoading}
+  className="px-8 py-4 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-xl font-bold text-lg hover:shadow-xl transition-all disabled:opacity-50 disabled:cursor-not-allowed inline-flex items-center gap-2"
+>
+  {isLoading ? (
+    <>
+      <svg className="animate-spin h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+      </svg>
+      Envoi en cours...
+    </>
+  ) : (
+    <>
+      <Sparkles className="h-5 w-5" />
+      Envoyer ma demande
+    </>
+  )}
+</button>
             )}
           </div>
         </div>
