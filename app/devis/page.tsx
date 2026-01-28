@@ -13,7 +13,7 @@ const COMPANY = {
 };
 // Configuration EmailJS (même que formulaire contact)
 const EMAILJS_CONFIG = {
-  serviceId: 'service_67ktt0t',
+  serviceId: 'service_6ubz9f8',
   templateId: 'template_w0ii8pm', // À REMPLACER par ton Template ID
   publicKey: 'nrVf3vJi4ywLNDpWF'
 };
