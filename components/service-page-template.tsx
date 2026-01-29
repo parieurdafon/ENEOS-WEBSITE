@@ -36,11 +36,11 @@ export function ServicePageTemplate({ service }: { service: ServiceInfo }) {
             src={service.image || "/placeholder.svg"}
             alt={service.title}
             fill
-            className="object-cover opacity-50"
+            className="object-cover opacity-100"
             priority
           />
           {/* Overlay allégé - de 95% à 70-85% pour voir l'image */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#1a2e35]/85 via-[#1a2e35]/70 to-[#1a2e35]/85" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#1a2e35]/60 via-[#1a2e35]/40 to-[#1a2e35]/60" />
         </div>
 
         <div className="container mx-auto px-4 relative z-10">

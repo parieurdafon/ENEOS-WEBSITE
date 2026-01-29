@@ -1,5 +1,6 @@
 import { Metadata } from "next"
 import Link from "next/link"
+import Image from "next/image"  // ← AJOUTER CETTE LIGNE
 import { CheckCircle, AlertCircle, Clock, Euro, FileText, TrendingUp, Home, Zap, Shield, ArrowRight, Phone } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -12,38 +13,56 @@ export const metadata: Metadata = {
 export default function AuditEnergetiquePage() {
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-emerald-900 via-emerald-800 to-teal-900 text-white py-20">
-        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10" />
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-block bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-semibold mb-6">
-              <Zap className="inline h-4 w-4 mr-2" />
-              Étude énergétique approfondie
-            </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              Audit Énergétique
-            </h1>
-            <p className="text-xl md:text-2xl text-emerald-100 mb-8">
-              Un plan d'action personnalisé pour améliorer la performance énergétique de votre bien
-            </p>
-            <div className="flex flex-wrap gap-4 justify-center">
-              <Button size="lg" className="bg-white text-emerald-900 hover:bg-emerald-50" asChild>
-                <Link href="/devis">
-                  Demander un devis
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-              <Button size="lg"  className="bg-white text-emerald-900 hover:bg-emerald-50" asChild>
-                <a href="tel:+33661070891">
-                  <Phone className="mr-2 h-5 w-5" />
-                  Appeler maintenant
-                </a>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+    
+
+{/* Hero Section avec image de fond */}
+<section className="relative bg-emerald-900 text-white py-20 overflow-hidden">
+  {/* Image de fond - OPTION 1 : opacity-100 */}
+  <div className="absolute inset-0">
+    <Image
+      src="/images/audit-hero.jpg"
+      alt="Audit Énergétique ENEOS HABITAT"
+      fill
+      className="object-cover opacity-100"
+      priority
+    />
+    {/* Overlay léger - de 40% à 60% */}
+    <div className="absolute inset-0 bg-gradient-to-r from-emerald-900/60 via-emerald-900/40 to-emerald-900/60" />
+  </div>
+
+  {/* Grille décorative */}
+  <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10 z-[1]" />
+  
+  {/* Contenu par-dessus l'image */}
+  <div className="container mx-auto px-4 relative z-10">
+    <div className="max-w-4xl mx-auto text-center">
+      <div className="inline-block bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-semibold mb-6 border border-white/30">
+        <Zap className="inline h-4 w-4 mr-2" />
+        Étude énergétique approfondie
+      </div>
+      <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 drop-shadow-lg">
+        Audit Énergétique
+      </h1>
+      <p className="text-xl md:text-2xl text-emerald-100 mb-8 drop-shadow">
+        Un plan d'action personnalisé pour améliorer la performance énergétique de votre bien
+      </p>
+      <div className="flex flex-wrap gap-4 justify-center">
+        <Button size="lg" className="bg-white text-emerald-900 hover:bg-emerald-50 shadow-xl" asChild>
+          <Link href="/devis">
+            Demander un devis
+            <ArrowRight className="ml-2 h-5 w-5" />
+          </Link>
+        </Button>
+        <Button size="lg" className="bg-white/10 backdrop-blur-sm border-2 border-white text-white hover:bg-white hover:text-emerald-900 shadow-xl" asChild>
+          <a href="tel:+33661070891">
+            <Phone className="mr-2 h-5 w-5" />
+            Appeler maintenant
+          </a>
+        </Button>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Prix Section */}
       <section className="py-16 bg-emerald-50">

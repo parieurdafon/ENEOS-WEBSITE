@@ -125,11 +125,11 @@ export default function ContactPage() {
       src="/images/team.jpeg"
       alt="Contact ENEOS HABITAT"
       fill
-      className="object-cover opacity-50"
+      className="object-cover opacity-100"
       priority
     />
     {/* Overlay pour garder le texte lisible */}
-    <div className="absolute inset-0 bg-gradient-to-r from-[#1a2e35]/85 via-[#1a2e35]/70 to-[#1a2e35]/85" />
+    <div className="absolute inset-0 bg-gradient-to-r from-[#1a2e35]/60 via-[#1a2e35]/40 to-[#1a2e35]/60" />
   </div>
 
   {/* Contenu par-dessus l'image */}
