@@ -117,21 +117,36 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero */}
-      <div className="bg-[#1a2e35] text-white py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <span className="inline-block px-4 py-1 bg-white/10 rounded-full text-sm font-medium mb-4">
-              CONTACT
-            </span>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-              Contactez <span className="text-[#2d8a5e]">ENEOS HABITAT</span>
-            </h1>
-            <p className="text-lg text-white/80">
-              Notre équipe est à votre disposition pour répondre à toutes vos questions concernant vos diagnostics immobiliers.
-            </p>
-          </div>
-        </div>
-      </div>
+      {/* Hero avec image de fond */}
+<div className="relative bg-[#1a2e35] text-white py-20 overflow-hidden">
+  {/* Image de fond */}
+  <div className="absolute inset-0">
+    <Image
+      src="/images/team.jpeg"
+      alt="Contact ENEOS HABITAT"
+      fill
+      className="object-cover opacity-50"
+      priority
+    />
+    {/* Overlay pour garder le texte lisible */}
+    <div className="absolute inset-0 bg-gradient-to-r from-[#1a2e35]/85 via-[#1a2e35]/70 to-[#1a2e35]/85" />
+  </div>
+
+  {/* Contenu par-dessus l'image */}
+  <div className="container mx-auto px-4 relative z-10">
+    <div className="max-w-3xl mx-auto text-center">
+      <span className="inline-block px-4 py-1 bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium mb-4 border border-white/20">
+        CONTACT
+      </span>
+      <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 drop-shadow-lg">
+        Contactez <span className="text-[#2d8a5e]">ENEOS HABITAT</span>
+      </h1>
+      <p className="text-lg text-white/90 drop-shadow">
+        Notre équipe est à votre disposition pour répondre à toutes vos questions concernant vos diagnostics immobiliers.
+      </p>
+    </div>
+  </div>
+</div>
 
       <div className="container mx-auto px-4 py-16">
         <div className="grid lg:grid-cols-3 gap-12">

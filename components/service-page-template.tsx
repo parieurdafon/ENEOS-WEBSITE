@@ -28,37 +28,40 @@ interface ServiceInfo {
 export function ServicePageTemplate({ service }: { service: ServiceInfo }) {
   return (
     <>
-      {/* Hero Section */}
+      {/* Hero Section - IMAGE PLUS VISIBLE */}
       <section className="relative py-20 lg:py-28 bg-[#1a2e35] overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
+        {/* Image de fond - opacité augmentée de 20% à 50% */}
+        <div className="absolute inset-0">
           <Image
             src={service.image || "/placeholder.svg"}
             alt={service.title}
             fill
-            className="object-cover"
+            className="object-cover opacity-50"
+            priority
           />
+          {/* Overlay allégé - de 95% à 70-85% pour voir l'image */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#1a2e35]/85 via-[#1a2e35]/70 to-[#1a2e35]/85" />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-[#1a2e35] via-[#1a2e35]/95 to-[#1a2e35]/80" />
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl">
-            <span className="inline-block px-4 py-1 bg-[#2d8a5e]/20 text-[#2d8a5e] rounded-full text-sm font-medium mb-4">
+            <span className="inline-block px-4 py-1 bg-[#2d8a5e]/20 backdrop-blur-sm text-[#2d8a5e] rounded-full text-sm font-medium mb-4 border border-[#2d8a5e]/30">
               DIAGNOSTIC OBLIGATOIRE
             </span>
-            <h1 className="text-4xl lg:text-5xl font-bold text-white mb-4">
+            <h1 className="text-4xl lg:text-5xl font-bold text-white mb-4 drop-shadow-lg">
               {service.title}
             </h1>
-            <p className="text-xl text-white/80 mb-8">
+            <p className="text-xl text-white/90 mb-8 drop-shadow">
               {service.subtitle}
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button asChild size="lg" className="bg-[#2d8a5e] hover:bg-[#238a50] text-white">
+              <Button asChild size="lg" className="bg-[#2d8a5e] hover:bg-[#238a50] text-white shadow-xl">
                 <Link href="/devis">
                   Demander un devis gratuit
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="bg-transparent border-white text-white hover:bg-white hover:text-[#1a2e35]">
+              <Button asChild size="lg" variant="outline" className="bg-white/10 backdrop-blur-sm border-white text-white hover:bg-white hover:text-[#1a2e35] shadow-xl">
                 <a href="tel:+33661070891">
                   <Phone className="mr-2 h-5 w-5" />
                   +33 6 61 07 08 91
