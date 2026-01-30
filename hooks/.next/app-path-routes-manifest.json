@@ -1,0 +1,22 @@
+{
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/a-propos/page": "/a-propos",
+  "/contact/page": "/contact",
+  "/devis/page": "/devis",
+  "/location/page": "/location",
+  "/mentions-legales/page": "/mentions-legales",
+  "/page": "/",
+  "/paiement/page": "/paiement",
+  "/services/amiante/page": "/services/amiante",
+  "/services/audit-energetique/page": "/services/audit-energetique",
+  "/services/boutin/page": "/services/boutin",
+  "/services/carrez/page": "/services/carrez",
+  "/services/dpe/page": "/services/dpe",
+  "/services/electricite/page": "/services/electricite",
+  "/services/erp/page": "/services/erp",
+  "/services/gaz/page": "/services/gaz",
+  "/services/plomb/page": "/services/plomb",
+  "/services/termites/page": "/services/termites",
+  "/vente/page": "/vente"
+}

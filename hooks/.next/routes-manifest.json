@@ -1,0 +1,164 @@
+{
+  "version": 3,
+  "pages404": true,
+  "caseSensitive": false,
+  "basePath": "",
+  "redirects": [
+    {
+      "source": "/:path+/",
+      "destination": "/:path+",
+      "internal": true,
+      "priority": true,
+      "statusCode": 308,
+      "regex": "^(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))/$"
+    }
+  ],
+  "headers": [],
+  "rewrites": {
+    "beforeFiles": [],
+    "afterFiles": [],
+    "fallback": []
+  },
+  "dynamicRoutes": [],
+  "staticRoutes": [
+    {
+      "page": "/",
+      "regex": "^/(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/(?:/)?$"
+    },
+    {
+      "page": "/_global-error",
+      "regex": "^/_global\\-error(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_global\\-error(?:/)?$"
+    },
+    {
+      "page": "/_not-found",
+      "regex": "^/_not\\-found(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_not\\-found(?:/)?$"
+    },
+    {
+      "page": "/a-propos",
+      "regex": "^/a\\-propos(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/a\\-propos(?:/)?$"
+    },
+    {
+      "page": "/contact",
+      "regex": "^/contact(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/contact(?:/)?$"
+    },
+    {
+      "page": "/devis",
+      "regex": "^/devis(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/devis(?:/)?$"
+    },
+    {
+      "page": "/location",
+      "regex": "^/location(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/location(?:/)?$"
+    },
+    {
+      "page": "/mentions-legales",
+      "regex": "^/mentions\\-legales(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/mentions\\-legales(?:/)?$"
+    },
+    {
+      "page": "/paiement",
+      "regex": "^/paiement(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/paiement(?:/)?$"
+    },
+    {
+      "page": "/services/amiante",
+      "regex": "^/services/amiante(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/services/amiante(?:/)?$"
+    },
+    {
+      "page": "/services/audit-energetique",
+      "regex": "^/services/audit\\-energetique(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/services/audit\\-energetique(?:/)?$"
+    },
+    {
+      "page": "/services/boutin",
+      "regex": "^/services/boutin(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/services/boutin(?:/)?$"
+    },
+    {
+      "page": "/services/carrez",
+      "regex": "^/services/carrez(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/services/carrez(?:/)?$"
+    },
+    {
+      "page": "/services/dpe",
+      "regex": "^/services/dpe(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/services/dpe(?:/)?$"
+    },
+    {
+      "page": "/services/electricite",
+      "regex": "^/services/electricite(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/services/electricite(?:/)?$"
+    },
+    {
+      "page": "/services/erp",
+      "regex": "^/services/erp(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/services/erp(?:/)?$"
+    },
+    {
+      "page": "/services/gaz",
+      "regex": "^/services/gaz(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/services/gaz(?:/)?$"
+    },
+    {
+      "page": "/services/plomb",
+      "regex": "^/services/plomb(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/services/plomb(?:/)?$"
+    },
+    {
+      "page": "/services/termites",
+      "regex": "^/services/termites(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/services/termites(?:/)?$"
+    },
+    {
+      "page": "/vente",
+      "regex": "^/vente(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/vente(?:/)?$"
+    }
+  ],
+  "dataRoutes": [],
+  "rsc": {
+    "header": "rsc",
+    "varyHeader": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+    "prefetchHeader": "next-router-prefetch",
+    "didPostponeHeader": "x-nextjs-postponed",
+    "contentTypeHeader": "text/x-component",
+    "suffix": ".rsc",
+    "prefetchSuffix": ".prefetch.rsc",
+    "prefetchSegmentHeader": "next-router-segment-prefetch",
+    "prefetchSegmentSuffix": ".segment.rsc",
+    "prefetchSegmentDirSuffix": ".segments",
+    "clientParamParsing": false,
+    "dynamicRSCPrerender": false
+  },
+  "rewriteHeaders": {
+    "pathHeader": "x-nextjs-rewritten-path",
+    "queryHeader": "x-nextjs-rewritten-query"
+  }
+}

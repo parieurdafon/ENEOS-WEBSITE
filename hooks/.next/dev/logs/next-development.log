@@ -1,0 +1,230 @@
+[00:00:04.365] Server  LOG      ✓ Ready in 3.1s
+[00:00:18.981] Server  LOG      ○ Compiling / ...
+[00:02:07.000] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:02:07.577] Browser WARN    Image with src "http://localhost:3000/images/about.jpeg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:02:07.577] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:02:07.577] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:02:07.577] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1769547215503}
+[00:02:32.873] Server  LOG      ○ Compiling /devis ...
+[00:02:50.152] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[00:02:50.152] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/devis color: rgb(120, 120, 120) color: inherit {"dp":"/devis","o":"http://localhost:3000/devis","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1769547258091}
+[00:08:21.745] Browser LOG     📧 Envoi du devis via EmailJS... {"acces_bien":"libre","address":"3466 Avenue de Toulouse","assainissement":"noncollectif","chauffage":"individuel","city":"Cadaujac","civility":"M.","complement":"","construction_date":"avant1949","contact_preference":"telephone","copropriete":"non","date_preference":"28/01/2026","diagnostics_html":"\n        <li class=\"diagnostic-item mandatory\">\n          <div>\n            <span class=\"name\">⚠️ Amiante</span>\n            <span class=\"badge\">OBLIGATOIRE</span>\n          </div>\n          <span class=\"price\">59€</span>\n        </li>\n      \n        <li class=\"diagnostic-item mandatory\">\n          <div>\n            <span class=\"name\">🚰 Assainissement</span>\n            <span class=\"badge\">OBLIGATOIRE</span>\n          </div>\n          <span class=\"price\">79€</span>\n        </li>\n      \n        <li class=\"diagnostic-item mandatory\">\n          <div>\n            <span class=\"name\">🔥 DPE</span>\n            <span class=\"badge\">OBLIGATOIRE</span>\n          </div>\n          <span class=\"price\">79€</span>\n        </li>\n      \n        <li class=\"diagnostic-item mandatory\">\n          <div>\n            <span class=\"name\">⚡ Électricité</span>\n            <span class=\"badge\">OBLIGATOIRE</span>\n          </div>\n          <span class=\"price\">63€</span>\n        </li>\n      \n        <li class=\"diagnostic-item mandatory\">\n          <div>\n            <span class=\"name\">🌍 ERP</span>\n            <span class=\"badge\">OBLIGATOIRE</span>\n          </div>\n          <span class=\"price\">0€</span>\n        </li>\n      \n        <li class=\"diagnostic-item mandatory\">\n          <div>\n            <span class=\"name\">🎨 Plomb (CREP)</span>\n            <span class=\"badge\">OBLIGATOIRE</span>\n          </div>\n          <span class=\"price\">66€</span>\n        </li>\n      \n        <li class=\"diagnostic-item mandatory\">\n          <div>\n            <span class=\"name\">🐜 État relatif à la présence de termites</span>\n            <span class=\"badge\">OBLIGATOIRE</span>\n          </div>\n          <span class=\"price\">53€</span>\n        </li>\n      ","discount_text":"Remise pack -40% incluse","electricite":"plus15ans","email":"dafonseca@gmail.com","first_name":"prince","gaz":"moins15ans","has_additional_info":true,"if_urgence_urgent":true,"last_name":"dafonseca","message":"","nb_diagnostics":7,"parking":"non","phone":"06000000","pieces":"2","postal_code":"33140","property_type":"maison","surface":"90","time_slot":"matin","total":399,"transaction_type":"VENTE","urgence":"urgent"}
+[00:08:23.412] Browser LOG     ✅ Devis envoyé avec succès! {"status":200,"text":"OK"}
+[00:09:23.358] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1769547651268}
+[19:37:03.995] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/devis color: rgb(120, 120, 120) color: inherit {"dp":"/devis","o":"http://localhost:3000/devis","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1769617687082}
+[19:39:22.018] Browser LOG     📧 Envoi du devis via EmailJS... {"acces_bien":"libre","address":"33466 Avenue de Toulouse","assainissement":"collectif","chauffage":"collectif","city":"Cadaujac","civility":"M.","complement":"","construction_date":"avant1949","contact_preference":"telephone","copropriete":"oui","date_preference":"04/02/2026","diagnostics_html":"\n        <li class=\"diagnostic-item mandatory\">\n          <div>\n            <span class=\"name\">⚠️ Amiante</span>\n            <span class=\"badge\">OBLIGATOIRE</span>\n          </div>\n          <span class=\"price\">59€</span>\n        </li>\n      \n        <li class=\"diagnostic-item mandatory\">\n          <div>\n            <span class=\"name\">📐 Loi Carrez</span>\n            <span class=\"badge\">OBLIGATOIRE</span>\n          </div>\n          <span class=\"price\">46€</span>\n        </li>\n      \n        <li class=\"diagnostic-item mandatory\">\n          <div>\n            <span class=\"name\">🔥 DPE</span>\n            <span class=\"badge\">OBLIGATOIRE</span>\n          </div>\n          <span class=\"price\">79€</span>\n        </li>\n      \n        <li class=\"diagnostic-item mandatory\">\n          <div>\n            <span class=\"name\">⚡ Électricité</span>\n            <span class=\"badge\">OBLIGATOIRE</span>\n          </div>\n          <span class=\"price\">63€</span>\n        </li>\n      \n        <li class=\"diagnostic-item mandatory\">\n          <div>\n            <span class=\"name\">🌍 ERP</span>\n            <span class=\"badge\">OBLIGATOIRE</span>\n          </div>\n          <span class=\"price\">0€</span>\n        </li>\n      \n        <li class=\"diagnostic-item mandatory\">\n          <div>\n            <span class=\"name\">🔥 Gaz</span>\n            <span class=\"badge\">OBLIGATOIRE</span>\n          </div>\n          <span class=\"price\">56€</span>\n        </li>\n      \n        <li class=\"diagnostic-item mandatory\">\n          <div>\n            <span class=\"name\">🎨 Plomb (CREP)</span>\n            <span class=\"badge\">OBLIGATOIRE</span>\n          </div>\n          <span class=\"price\">66€</span>\n        </li>\n      \n        <li class=\"diagnostic-item mandatory\">\n          <div>\n            <span class=\"name\">🐜 État relatif à la présence de termites</span>\n            <span class=\"badge\">OBLIGATOIRE</span>\n          </div>\n          <span class=\"price\">53€</span>\n        </li>\n      ","discount_text":"Remise pack -40% incluse","electricite":"plus15ans","email":"princedafonseca@gmail.com","first_name":"prince","gaz":"plus15ans","has_additional_info":true,"if_urgence_urgent":true,"last_name":"dafonseca","message":"","nb_diagnostics":8,"parking":"oui","phone":"060000000","pieces":"2","postal_code":"33140","property_type":"maison","surface":"89","time_slot":"matin","total":422,"transaction_type":"VENTE","urgence":"urgent"}
+[19:39:23.791] Browser LOG     ✅ Devis envoyé avec succès! {"status":200,"text":"OK"}
+[24:37:36.680] Server  LOG      ✓ Compiled in 818ms
+[24:40:13.194] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1769635876251}
+[24:40:14.728] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/devis color: rgb(120, 120, 120) color: inherit {"dp":"/devis","o":"http://localhost:3000/devis","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1769635877802}
+[24:42:01.487] Browser LOG     📧 Envoi du devis via EmailJS... {"acces_bien":"cles","address":"334 de gueree","assainissement":"collectif","chauffage":"individuel","city":"PARIS","civility":"M.","complement":"","construction_date":"avant1949","contact_preference":"telephone","copropriete":"oui","date_preference":"29/01/2026","diagnostics_html":"\n        <li class=\"diagnostic-item mandatory\">\n          <div>\n            <span class=\"name\">⚠️ Amiante</span>\n            <span class=\"badge\">OBLIGATOIRE</span>\n          </div>\n          <span class=\"price\">59€</span>\n        </li>\n      \n        <li class=\"diagnostic-item mandatory\">\n          <div>\n            <span class=\"name\">📐 Loi Carrez</span>\n            <span class=\"badge\">OBLIGATOIRE</span>\n          </div>\n          <span class=\"price\">46€</span>\n        </li>\n      \n        <li class=\"diagnostic-item mandatory\">\n          <div>\n            <span class=\"name\">🔥 DPE</span>\n            <span class=\"badge\">OBLIGATOIRE</span>\n          </div>\n          <span class=\"price\">79€</span>\n        </li>\n      \n        <li class=\"diagnostic-item mandatory\">\n          <div>\n            <span class=\"name\">⚡ Électricité</span>\n            <span class=\"badge\">OBLIGATOIRE</span>\n          </div>\n          <span class=\"price\">63€</span>\n        </li>\n      \n        <li class=\"diagnostic-item mandatory\">\n          <div>\n            <span class=\"name\">🌍 ERP</span>\n            <span class=\"badge\">OBLIGATOIRE</span>\n          </div>\n          <span class=\"price\">0€</span>\n        </li>\n      \n        <li class=\"diagnostic-item mandatory\">\n          <div>\n            <span class=\"name\">🔥 Gaz</span>\n            <span class=\"badge\">OBLIGATOIRE</span>\n          </div>\n          <span class=\"price\">56€</span>\n        </li>\n      \n        <li class=\"diagnostic-item mandatory\">\n          <div>\n            <span class=\"name\">🎨 Plomb (CREP)</span>\n            <span class=\"badge\">OBLIGATOIRE</span>\n          </div>\n          <span class=\"price\">66€</span>\n        </li>\n      \n        <li class=\"diagnostic-item mandatory\">\n          <div>\n            <span class=\"name\">🐜 État relatif à la présence de termites</span>\n            <span class=\"badge\">OBLIGATOIRE</span>\n          </div>\n          <span class=\"price\">53€</span>\n        </li>\n      \n        <li class=\"diagnostic-item\">\n          <div>\n            <span class=\"name\">📏 Loi Boutin</span>\n            \n          </div>\n          <span class=\"price\">40€</span>\n        </li>\n      \n        <li class=\"diagnostic-item\">\n          <div>\n            <span class=\"name\">🚰 Assainissement</span>\n            \n          </div>\n          <span class=\"price\">79€</span>\n        </li>\n      ","discount_text":"Remise pack -40% incluse","electricite":"plus15ans","email":"princedafonseca@gmail.com","first_name":"PRINCE","gaz":"plus15ans","has_additional_info":true,"if_urgence_urgent":true,"last_name":"DAFONSECA","message":"","nb_diagnostics":10,"parking":"oui","phone":"084309563","pieces":"2","postal_code":"3300","property_type":"maison","surface":"98","time_slot":"matin","total":541,"transaction_type":"VENTE","urgence":"urgent"}
+[24:42:03.245] Browser LOG     ✅ Devis envoyé avec succès! {"status":200,"text":"OK"}
+[30:00:17.441] Browser LOG     🔧 Initialisation EmailJS...
+[30:00:17.441] Browser LOG     Public Key: -QOPPR0iHkHtsOjeP
+[30:00:17.441] Browser LOG     ✅ EmailJS initialisé avec succès
+[30:00:17.441] Browser LOG     🔧 Initialisation EmailJS...
+[30:00:17.441] Browser LOG     Public Key: -QOPPR0iHkHtsOjeP
+[30:00:17.441] Browser LOG     ✅ EmailJS initialisé avec succès
+[30:00:17.441] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/contact color: rgb(120, 120, 120) color: inherit {"dp":"/contact","o":"http://localhost:3000/contact","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1769655080495}
+[30:08:04.809] Server  LOG      ✓ Compiled in 424ms
+[30:08:15.819] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[30:08:16.121] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <Popper __scopePopper={{Menu:[...], ...}}>
+      <PopperProvider scope={{Menu:[...], ...}} anchor={null} onAnchorChange={function bound dispatchSetState}>
+        <MenuProvider scope={{Menu:[...], ...}} open={false} onOpenChange={function useCallbackRef.useMemo} ...>
+          <MenuProvider scope={{Menu:[...], ...}} onClose={function Menu.useCallback} ...>
+            <DropdownMenuTrigger className="flex items...">
+              <DropdownMenuTrigger data-slot="dropdown-m..." className="flex items...">
+                <MenuAnchor asChild={true} __scopeMenu={{Menu:[...], ...}}>
+                  <PopperAnchor __scopePopper={{Menu:[...], ...}} asChild={true} ref={null}>
+                    <Primitive.div asChild={true} ref={function}>
+                      <Slot ref={function}>
+                        <SlotClone ref={function}>
+                          <Primitive.button type="button" id="radix-_R_9..." aria-haspopup="menu" aria-expanded={false} ...>
+                            <button
+                              type="button"
++                             id="radix-_R_96lb_"
+-                             id="radix-_R_29hlb_"
+                              aria-haspopup="menu"
+                              aria-expanded={false}
+                              aria-controls={undefined}
+                              data-state="closed"
+                              data-disabled={undefined}
+                              disabled={false}
+                              data-slot="dropdown-menu-trigger"
+                              className="flex items-center gap-1 text-foreground hover:text-primary font-medium transi..."
+                              onPointerDown={function handleEvent}
+                              onKeyDown={function handleEvent}
+                              ref={function}
+                            >
+            ...
+
+[30:08:16.121] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[30:08:16.121] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/contact","route":"/contact"}
+[30:08:16.121] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/contact color: rgb(120, 120, 120) color: inherit {"dp":"/contact","o":"http://localhost:3000/contact","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1769655559189}
+[30:12:19.972] Server  LOG      ✓ Compiled in 262ms
+[30:13:56.502] Server  LOG      ✓ Compiled in 151ms
+[30:14:13.072] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[30:14:13.399] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <Popper __scopePopper={{Menu:[...], ...}}>
+      <PopperProvider scope={{Menu:[...], ...}} anchor={null} onAnchorChange={function bound dispatchSetState}>
+        <MenuProvider scope={{Menu:[...], ...}} open={false} onOpenChange={function useCallbackRef.useMemo} ...>
+          <MenuProvider scope={{Menu:[...], ...}} onClose={function Menu.useCallback} ...>
+            <DropdownMenuTrigger className="flex items...">
+              <DropdownMenuTrigger data-slot="dropdown-m..." className="flex items...">
+                <MenuAnchor asChild={true} __scopeMenu={{Menu:[...], ...}}>
+                  <PopperAnchor __scopePopper={{Menu:[...], ...}} asChild={true} ref={null}>
+                    <Primitive.div asChild={true} ref={function}>
+                      <Slot ref={function}>
+                        <SlotClone ref={function}>
+                          <Primitive.button type="button" id="radix-_R_9..." aria-haspopup="menu" aria-expanded={false} ...>
+                            <button
+                              type="button"
++                             id="radix-_R_96lb_"
+-                             id="radix-_R_29hlb_"
+                              aria-haspopup="menu"
+                              aria-expanded={false}
+                              aria-controls={undefined}
+                              data-state="closed"
+                              data-disabled={undefined}
+                              disabled={false}
+                              data-slot="dropdown-menu-trigger"
+                              className="flex items-center gap-1 text-foreground hover:text-primary font-medium transi..."
+                              onPointerDown={function handleEvent}
+                              onKeyDown={function handleEvent}
+                              ref={function}
+                            >
+            ...
+
+[30:14:13.399] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[30:14:13.399] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/contact","route":"/contact"}
+[30:14:13.399] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/contact color: rgb(120, 120, 120) color: inherit {"dp":"/contact","o":"http://localhost:3000/contact","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1769655916461}
+[30:16:46.190] Server  LOG      ✓ Compiled in 201ms
+[30:17:18.212] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[30:17:18.212] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/services/amiante color: rgb(120, 120, 120) color: inherit {"dp":"/services/amiante","o":"http://localhost:3000/services/amiante","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1769656101243}
+[30:26:04.043] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/services/plomb color: rgb(120, 120, 120) color: inherit {"dp":"/services/plomb","o":"http://localhost:3000/services/plomb","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1769656627064}
+[30:26:20.023] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/services/dpe color: rgb(120, 120, 120) color: inherit {"dp":"/services/dpe","o":"http://localhost:3000/services/dpe","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1769656643061}
+[30:26:36.184] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/a-propos color: rgb(120, 120, 120) color: inherit {"dp":"/a-propos","o":"http://localhost:3000/a-propos","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1769656659243}
+[30:26:39.086] Browser LOG     🔧 Initialisation EmailJS...
+[30:26:39.086] Browser LOG     Public Key: -QOPPR0iHkHtsOjeP
+[30:26:39.086] Browser LOG     ✅ EmailJS initialisé avec succès
+[30:26:39.086] Browser LOG     🔧 Initialisation EmailJS...
+[30:26:39.086] Browser LOG     Public Key: -QOPPR0iHkHtsOjeP
+[30:26:39.086] Browser LOG     ✅ EmailJS initialisé avec succès
+[30:26:39.086] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/contact color: rgb(120, 120, 120) color: inherit {"dp":"/contact","o":"http://localhost:3000/contact","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1769656662126}
+[30:57:06.294] Server  LOG      ✓ Compiled in 156ms
+[30:57:15.719] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1769658498716}
+[30:57:15.719] Browser WARN    Image with src "http://localhost:3000/images/about.jpeg" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[30:57:17.516] Browser LOG     🔧 Initialisation EmailJS...
+[30:57:17.516] Browser LOG     Public Key: -QOPPR0iHkHtsOjeP
+[30:57:17.516] Browser LOG     ✅ EmailJS initialisé avec succès
+[30:57:17.516] Browser LOG     🔧 Initialisation EmailJS...
+[30:57:17.516] Browser LOG     Public Key: -QOPPR0iHkHtsOjeP
+[30:57:17.516] Browser LOG     ✅ EmailJS initialisé avec succès
+[30:57:17.516] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/contact color: rgb(120, 120, 120) color: inherit {"dp":"/contact","o":"http://localhost:3000/contact","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1769658500515}
+[31:03:39.801] Server  LOG      ✓ Compiled in 153ms
+[31:04:06.187] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/a-propos color: rgb(120, 120, 120) color: inherit {"dp":"/a-propos","o":"http://localhost:3000/a-propos","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1769658909220}
+[31:07:53.083] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/vente color: rgb(120, 120, 120) color: inherit {"dp":"/vente","o":"http://localhost:3000/vente","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1769659136150}
+[31:07:57.733] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/services/electricite color: rgb(120, 120, 120) color: inherit {"dp":"/services/electricite","o":"http://localhost:3000/services/electricite","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1769659140803}
+[31:08:02.357] Browser LOG     🔧 Initialisation EmailJS...
+[31:08:02.357] Browser LOG     Public Key: -QOPPR0iHkHtsOjeP
+[31:08:02.357] Browser LOG     ✅ EmailJS initialisé avec succès
+[31:08:02.357] Browser LOG     🔧 Initialisation EmailJS...
+[31:08:02.357] Browser LOG     Public Key: -QOPPR0iHkHtsOjeP
+[31:08:02.357] Browser LOG     ✅ EmailJS initialisé avec succès
+[31:08:02.357] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/contact color: rgb(120, 120, 120) color: inherit {"dp":"/contact","o":"http://localhost:3000/contact","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1769659145413}
+[31:08:09.928] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1769659152959}
+[38:45:57.004] Browser LOG     🔧 Initialisation EmailJS...
+[38:45:57.004] Browser LOG     Public Key: -QOPPR0iHkHtsOjeP
+[38:45:57.004] Browser LOG     ✅ EmailJS initialisé avec succès
+[38:45:57.004] Browser LOG     🔧 Initialisation EmailJS...
+[38:45:57.004] Browser LOG     Public Key: -QOPPR0iHkHtsOjeP
+[38:45:57.004] Browser LOG     ✅ EmailJS initialisé avec succès
+[38:45:57.004] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/contact color: rgb(120, 120, 120) color: inherit {"dp":"/contact","o":"http://localhost:3000/contact","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1769686512543}
+[42:57:22.036] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/services/audit-energetique color: rgb(120, 120, 120) color: inherit {"dp":"/services/audit-energetique","o":"http://localhost:3000/services/audit-energetique","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1769701597578}
+[42:57:41.028] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1769701616577}
+[43:08:14.609] Server  LOG      ✓ Compiled in 362ms
+[43:08:20.800] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/services/amiante color: rgb(120, 120, 120) color: inherit {"dp":"/services/amiante","o":"http://localhost:3000/services/amiante","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1769702256366}
+[43:09:30.310] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[43:09:30.567] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[43:09:30.567] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/services/amiante","route":"/services/amiante"}
+[43:09:30.567] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/services/amiante color: rgb(120, 120, 120) color: inherit {"dp":"/services/amiante","o":"http://localhost:3000/services/amiante","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1769702326126}
+[43:09:36.453] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[43:09:36.453] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/services/electricite color: rgb(120, 120, 120) color: inherit {"dp":"/services/electricite","o":"http://localhost:3000/services/electricite","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1769702332020}
+[43:09:48.218] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/services/plomb color: rgb(120, 120, 120) color: inherit {"dp":"/services/plomb","o":"http://localhost:3000/services/plomb","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1769702343781}
+[43:10:21.132] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[43:10:21.398] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[43:10:21.398] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/services/plomb","route":"/services/plomb"}
+[43:10:21.398] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/services/plomb color: rgb(120, 120, 120) color: inherit {"dp":"/services/plomb","o":"http://localhost:3000/services/plomb","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1769702376959}
+[43:10:27.576] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[43:10:27.576] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/services/amiante color: rgb(120, 120, 120) color: inherit {"dp":"/services/amiante","o":"http://localhost:3000/services/amiante","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1769702383125}
+[43:17:06.765] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/services/plomb color: rgb(120, 120, 120) color: inherit {"dp":"/services/plomb","o":"http://localhost:3000/services/plomb","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1769702782328}
+[43:17:13.035] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/services/termites color: rgb(120, 120, 120) color: inherit {"dp":"/services/termites","o":"http://localhost:3000/services/termites","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1769702788572}
+[43:19:20.969] Server  LOG      ✓ Compiled in 140ms
+[43:21:34.480] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/services/audit-energetique color: rgb(120, 120, 120) color: inherit {"dp":"/services/audit-energetique","o":"http://localhost:3000/services/audit-energetique","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1769703049978}
+[43:31:30.744] Server  ERROR   C:\Users\HP\Downloads\eneos-habitat-website\.next\dev\server\chunks\ssr\[root-of-the-server]__ce8491ef._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[43:31:30.754] Server  ERROR    ⨯ ReferenceError: Image is not defined
+[43:31:31.231] Browser ERROR   uncaughtError: ReferenceError: Image is not defined
+[43:33:09.996] Server  ERROR   C:\Users\HP\Downloads\eneos-habitat-website\.next\dev\server\chunks\ssr\[root-of-the-server]__ce8491ef._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[43:33:09.997] Server  ERROR    ⨯ ReferenceError: Image is not defined
+[43:33:10.613] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[43:33:10.792] Browser ERROR   uncaughtError: ReferenceError: Image is not defined
+[43:33:43.336] Server  ERROR   C:\Users\HP\Downloads\eneos-habitat-website\.next\dev\server\chunks\ssr\[root-of-the-server]__ce8491ef._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[43:33:43.338] Server  ERROR    ⨯ ReferenceError: Image is not defined
+[43:33:44.043] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[43:33:44.426] Browser ERROR   uncaughtError: ReferenceError: Image is not defined
+[43:35:08.535] Server  ERROR   C:\Users\HP\Downloads\eneos-habitat-website\.next\dev\server\chunks\ssr\[root-of-the-server]__ce8491ef._.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[43:35:08.535] Server  ERROR    ⨯ ReferenceError: Image is not defined
+[43:35:09.241] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[43:35:09.415] Browser ERROR   uncaughtError: ReferenceError: Image is not defined
+[43:35:27.828] Server  LOG      ✓ Compiled in 158ms
+[43:35:29.985] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[43:35:30.561] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[43:35:30.561] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/services/audit-energetique","route":"/services/audit-energetique"}
+[43:35:30.561] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/services/audit-energetique color: rgb(120, 120, 120) color: inherit {"dp":"/services/audit-energetique","o":"http://localhost:3000/services/audit-energetique","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1769703886128}
+[43:36:28.360] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+[43:36:28.360] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/a-propos color: rgb(120, 120, 120) color: inherit {"dp":"/a-propos","o":"http://localhost:3000/a-propos","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1769703943926}
+[43:36:33.939] Browser LOG     🔧 Initialisation EmailJS...
+[43:36:33.940] Browser LOG     Public Key: -QOPPR0iHkHtsOjeP
+[43:36:33.940] Browser LOG     ✅ EmailJS initialisé avec succès
+[43:36:33.940] Browser LOG     🔧 Initialisation EmailJS...
+[43:36:33.940] Browser LOG     Public Key: -QOPPR0iHkHtsOjeP
+[43:36:33.940] Browser LOG     ✅ EmailJS initialisé avec succès
+[43:36:33.940] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/contact color: rgb(120, 120, 120) color: inherit {"dp":"/contact","o":"http://localhost:3000/contact","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1769703949500}
+[43:36:37.266] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/a-propos color: rgb(120, 120, 120) color: inherit {"dp":"/a-propos","o":"http://localhost:3000/a-propos","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1769703952835}
+[43:36:39.688] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/location color: rgb(120, 120, 120) color: inherit {"dp":"/location","o":"http://localhost:3000/location","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1769703955251}
+[43:51:38.999] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/services/amiante color: rgb(120, 120, 120) color: inherit {"dp":"/services/amiante","o":"http://localhost:3000/services/amiante","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1769704854532}
+[43:51:46.271] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/services/dpe color: rgb(120, 120, 120) color: inherit {"dp":"/services/dpe","o":"http://localhost:3000/services/dpe","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1769704861829}
+[43:51:51.594] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/services/audit-energetique color: rgb(120, 120, 120) color: inherit {"dp":"/services/audit-energetique","o":"http://localhost:3000/services/audit-energetique","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1769704867072}
+[43:51:56.133] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/a-propos color: rgb(120, 120, 120) color: inherit {"dp":"/a-propos","o":"http://localhost:3000/a-propos","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1769704871683}
+[43:51:58.308] Browser LOG     🔧 Initialisation EmailJS...
+[43:51:58.308] Browser LOG     Public Key: -QOPPR0iHkHtsOjeP
+[43:51:58.308] Browser LOG     ✅ EmailJS initialisé avec succès
+[43:51:58.308] Browser LOG     🔧 Initialisation EmailJS...
+[43:51:58.308] Browser LOG     Public Key: -QOPPR0iHkHtsOjeP
+[43:51:58.308] Browser LOG     ✅ EmailJS initialisé avec succès
+[43:51:58.308] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/contact color: rgb(120, 120, 120) color: inherit {"dp":"/contact","o":"http://localhost:3000/contact","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1769704873878}

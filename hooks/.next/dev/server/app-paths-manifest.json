@@ -1,0 +1,15 @@
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/a-propos/page": "app/a-propos/page.js",
+  "/contact/page": "app/contact/page.js",
+  "/devis/page": "app/devis/page.js",
+  "/location/page": "app/location/page.js",
+  "/page": "app/page.js",
+  "/services/amiante/page": "app/services/amiante/page.js",
+  "/services/audit-energetique/page": "app/services/audit-energetique/page.js",
+  "/services/dpe/page": "app/services/dpe/page.js",
+  "/services/electricite/page": "app/services/electricite/page.js",
+  "/services/plomb/page": "app/services/plomb/page.js",
+  "/services/termites/page": "app/services/termites/page.js",
+  "/vente/page": "app/vente/page.js"
+}
