@@ -35,7 +35,7 @@ export default function AProposPage() {
   {/* Image de fond */}
   <div className="absolute inset-0">
     <Image
-      src="/images/team.jpg"
+      src="/images/1.jpg"
       alt="À propos ENEOS HABITAT"
       fill
       className="object-cover opacity-100"
@@ -75,7 +75,7 @@ export default function AProposPage() {
               />
               <div className="absolute -bottom-8 -right-8 bg-[#2d8a5e] text-white p-6 rounded-2xl shadow-xl">
                 <div className="text-center">
-                  <span className="block text-3xl font-bold">Certifications LCP</span>
+                  <span className="block text-3xl font-bold">Gérant</span>
                   
                 </div>
               </div>

@@ -45,9 +45,10 @@ export function ServicePageTemplate({ service }: { service: ServiceInfo }) {
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl">
-            <span className="inline-block px-4 py-1 bg-[#2d8a5e]/20 backdrop-blur-sm text-[#2d8a5e] rounded-full text-sm font-medium mb-4 border border-[#2d8a5e]/30">
-              DIAGNOSTIC OBLIGATOIRE
-            </span>
+            <span className="inline-block px-4 py-1 bg-[#2d8a5e]/90 backdrop-blur-sm text-white rounded-full text-sm font-medium mb-4 border border-white/30">
+  DIAGNOSTIC OBLIGATOIRE
+</span>
+
             <h1 className="text-4xl lg:text-5xl font-bold text-white mb-4 drop-shadow-lg">
               {service.title}
             </h1>
