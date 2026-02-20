@@ -35,29 +35,29 @@ export function AboutSection() {
     <section className="py-20 lg:py-28 bg-white">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Image Side */}
-          <div className="relative">
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-              <Image
-                src="/images/about.jpeg"
-                alt="Expert ENEOS HABITAT"
-                width={600}
-                height={500}
-                className="w-full h-[400px] lg:h-[500px] object-cover"
-              />
-              {/* Experience Badge */}
-              <div className="absolute -bottom-6 -right-6 bg-[#2d8a5e] text-white p-8 rounded-2xl shadow-xl flex items-center justify-center min-w-[180px]">
-                <div className="text-center">
-                  <div className="text-4xl font-bold mb-1">+10</div>
-                  <div className="text-sm text-white/90 whitespace-nowrap">ans d'expérience</div>
-                </div>
-              </div>
-            </div>
-            
-            {/* Decorative elements */}
-            <div className="absolute -top-6 -left-6 w-24 h-24 bg-[#2d8a5e]/10 rounded-2xl -z-10" />
-            <div className="absolute bottom-12 -left-12 w-32 h-32 bg-orange-500/10 rounded-full -z-10" />
-          </div>
+         {/* Image Side */}
+<div className="relative">
+  <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+    <Image
+      src="/images/about.jpeg"
+      alt="Expert ENEOS HABITAT"
+      width={600}
+      height={500}
+      className="w-full h-[300px] lg:h-[400px] object-cover"  // ← Réduit de 400/500 à 300/400
+    />
+    {/* Experience Badge */}
+    <div className="absolute -bottom-6 -right-6 bg-[#2d8a5e] text-white p-6 rounded-2xl shadow-xl flex items-center justify-center min-w-[160px]">  {/* ← p-8 → p-6, min-w-[180px] → min-w-[160px] */}
+      <div className="text-center">
+        <div className="text-3xl font-bold mb-1">+10</div>  {/* ← text-4xl → text-3xl */}
+        <div className="text-sm text-white/90 whitespace-nowrap">ans d'expérience</div>
+      </div>
+    </div>
+  </div>
+  
+  {/* Decorative elements */}
+  <div className="absolute -top-6 -left-6 w-24 h-24 bg-[#2d8a5e]/10 rounded-2xl -z-10" />
+  <div className="absolute bottom-12 -left-12 w-32 h-32 bg-orange-500/10 rounded-full -z-10" />
+</div>
 
           {/* Content Side */}
           <div>

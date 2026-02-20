@@ -73,12 +73,8 @@ export default function AProposPage() {
                 height={500}
                 className="rounded-2xl shadow-2xl"
               />
-              <div className="absolute -bottom-8 -right-8 bg-[#2d8a5e] text-white p-6 rounded-2xl shadow-xl">
-                <div className="text-center">
-                  <span className="block text-3xl font-bold">Gérant</span>
-                  
-                </div>
-              </div>
+              {/* suppression */}
+              
             </div>
 
             <div>
